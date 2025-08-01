@@ -26,9 +26,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/inventory
 
 
-RUN composer install
 
 COPY . .
+
+RUN composer install
 
 
 # Fix permissions for Laravel storage and cache folders
