@@ -25,7 +25,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/inventory
 
-COPY . .
+
+COPY ./inventory /var/www/inventory
+
 
 RUN composer install
 
@@ -34,9 +36,6 @@ RUN composer install
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-    # Fix permissions for Laravel
-RUN chown -R www-data:www-data storage bootstrap/cache \
-&& chmod -R 775 storage bootstrap/cache
 
 
 EXPOSE 9000
