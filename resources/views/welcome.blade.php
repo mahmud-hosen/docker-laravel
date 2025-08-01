@@ -21,6 +21,6 @@
     </style>
 </head>
 <body>
-    <h1>Inventory App Deployment Using Docker .</h1>
+    <h1>Inventory App Deployment Using Docker file .</h1>
 </body>
 </html>
